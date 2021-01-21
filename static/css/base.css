@@ -6,8 +6,13 @@ body {
     background: url('/media/heroimg.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: red;
     font-family: 'Lato';
+}
+
+.test {
+    background-color: red;
+    color: green;
 }
 
 /* from Bulma */
