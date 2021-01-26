@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_list_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
+from .models import Product, Category
 
 # Create your views here.
 
@@ -22,7 +22,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('product'))
+                return redirect(reverse('products'))
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
